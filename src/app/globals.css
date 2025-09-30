@@ -1,26 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  --color-regal-dorado: #ffd700;
+  --color-shadow: rgba(255, 215, 0, 0.5);
+  --color-shadow-dorado: rgba(255, 215, 0, 0.5);
+  /* typo de letra */
+  --font-quicksand: "Quicksand", sans-serif;
+  --font-island: "Island Moments", sans-serif;
+  --font-misoul: "My Soul", sans-serif;
+  /* animacion */
+  --animate-ping-slow: pingslow 1s ease-in-out;
+  @keyframes pingslow {
+    0% {
+      opacity: 0;
+    }
+    ,
+    50% {
+      transform: scale(1);
+      opacity: 0;
+    }
+    ,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f3f4f6;
   }
 }
 
 body {
+  width: 100%;
+  height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+.mi-input-personal:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--background) inset !important;
+  -webkit-text-fill-color: var(--foreground) !important;
+}
+/* * {
+  margin: 0;
+  box-sizing: border-box;
+} */
